@@ -1,0 +1,40 @@
+{"hayabusa2": {
+  "name": "Hayabusa 2",
+  "icon": "hayabusa2.png",
+  "trajectory": [
+    {"date": "2016-09-01",
+     "type": "ecliptic",
+     "data": [304.6964, 4.7967, 1.2907]
+    },
+    {"date": "2016-08-01",
+     "type": "ecliptic",
+     "data": [285.6989, 3.4129, 1.2940]
+    }
+  ]    
+},
+"stereoa": {
+  "name": "Stereo A",
+  "icon": "stereoa.png",
+  "trajectory": [
+    {"date": "2016-09-01",
+     "type": "ecliptic",
+     "data": [188.2807, -0.0543, 0.9646]
+    },
+    {"date": "2016-08-01",
+     "type": "ecliptic",
+     "data": [156.1573, -0.1066, 0.9668]
+    }]    
+},
+}
+
+    
+      
+Stereo B      130.6969   0.1272  1.000
+Exomars       302.6995  -3.0898  1.3666
+67P/C-G       197.0377   3.8554  3.6735
+2014 MU69     283.1874   2.0282 43.3230
+New Horizons  284.8751   1.9321 36.3294
+Pioneer 10     79.4077   2.9996 116.657
+Pioneer 11    282.9083  14.1256 94.3196
+Voyager 1     255.5573  35.0247 135.971
+Voyager 2     289.8579 -35.7911 112.109

@@ -1,0 +1,30 @@
+{
+  "name": "d3-orrery",
+  "version": "0.2.0",
+  "description": "A D3.js solar system simulator",
+  "main": "orrery.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "d3-orrery": "file:"
+  },
+  "devDependencies": {
+    "jsdom": "^3.1.0",
+    "jshint": "^2.6.0",
+    "shelljs": "^0.3.0",
+    "tar-fs": "^1.4.2",
+    "uglify-js": "^2.4.16",
+    "zombie": "^2.5.1"
+  },
+  "scripts": {
+    "test": "node test/test.js"
+  },
+  "keywords": [
+    "D3.js",
+    "Solar System",
+    "simulation"
+  ],
+  "author": "Jeyadheep V",
+  "license": "BSD-3-Clause"
+}
