@@ -71,17 +71,13 @@ section {
   left: 34vw;
 }
 
-p{
+p {
   font-size: 20px;
-
 }
-.section-two{
+.section-two {
   background-color: black;
   color: white;
   font-family: "AlphaCentauri";
-  
-  
-
 }
 .asteroid img {
   width: 1000px;
@@ -166,15 +162,15 @@ li {
   place-self: center;
   width: calc(var(--d, 1cqi) * 0.75); /* Reduced size to 75% */
   &::after {
-      animation: rotate calc(var(--t, 3s) * 0.75) linear infinite; /* Adjusted speed for consistency */
-      aspect-ratio: 1 / 1;
-      background: var(--b, hsl(0, 0%, 50%));
-      border-radius: 50%;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-      content: '';
-      display: block;
-      offset-path: content-box;
-      width: calc(var(--w, 1cqi) * 0.75); /* Reduced size to 75% */
+    animation: rotate calc(var(--t, 3s) * 0.75) linear infinite; /* Adjusted speed for consistency */
+    aspect-ratio: 1 / 1;
+    background: var(--b, hsl(0, 0%, 50%));
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    content: "";
+    display: block;
+    offset-path: content-box;
+    width: calc(var(--w, 1cqi) * 0.75); /* Reduced size to 75% */
   }
 }
 
@@ -182,10 +178,9 @@ li {
 
 @keyframes rotate {
   to {
-      offset-distance: 100%;
+    offset-distance: 100%;
   }
 }
-
 
 /* Sun and Planets with Reduced Sizes */
 .sun {
@@ -194,9 +189,9 @@ li {
   --w: 6cqi;
   border: 0;
   &::after {
-      animation: none;
-      offset-path: none;
-      place-self: center;
+    animation: none;
+    offset-path: none;
+    place-self: center;
   }
 }
 
@@ -255,8 +250,6 @@ li {
   --t: calc(20000ms * 0.75); /* Adjusted speed */
   --w: calc(4.5cqi * 0.75);
 }
-
-
 
 .planet-links {
   width: 95%;
