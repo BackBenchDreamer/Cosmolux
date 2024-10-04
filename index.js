@@ -130,3 +130,23 @@ gsap.to(".swiper-slide", 0, {
 gsap.to(".swiper-slide-active", 0, {
   scale: 1,
 });
+
+/**
+ * Scroll top button
+ */
+let scrollTop = document.querySelector(".scroll-top");
+
+function toggleScrollTop() {
+  if (scrollTop) {
+    window.scrollY > 100
+      ? scrollTop.classList.add("active")
+      : scrollTop.classList.remove("active");
+  }
+}
+scrollTop.addEventListener("click", (e) => {
+  e.preventDefault();
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+});
