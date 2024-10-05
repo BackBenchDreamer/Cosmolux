@@ -376,20 +376,12 @@ p {
 *::after,
 *::before {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-html,
 body {
   height: 100%;
-  overflow: auto;
-}
-
-html {
-  font-size: calc(1.01vw + 1.43vh);
-}
-
-body {
-  margin: 0;
   font-family: "Comfortaa", sans-serif;
   font-size: 1rem;
   font-weight: 400;
@@ -398,37 +390,51 @@ body {
   color: white;
   overscroll-behavior: none;
   user-select: none;
-  -webkit-tap-highlight-color: transparent;
 }
 
-.Log {
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #232741;
+}
+
+nav {
   position: fixed;
-  top: 0;
-  left: 0;
-  margin: 0;
-  color: white;
-  line-height: 1;
-  pointer-events: none;
+  z-index: 100;
+  height: 8vh;
+  width: 96%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
 }
 
 .Parallax {
   --p: 120;
   height: 100vh;
   overflow: hidden;
-  -webkit-perspective: calc(var(--p) * 1px);
   perspective: calc(var(--p) * 1px);
-  -webkit-perspective-origin-x: 100%;
-  perspective-origin-x: 100%;
-  --p: 120; /* Perspective depth */
-  height: 100vh; /* Full viewport height */
-  overflow: hidden; /* Hide overflow */
-  perspective: calc(var(--p) * 1px); /* Perspective effect */
-  perspective-origin-x: 100%; /* Perspective origin */
-  background-image: url("/images/background.jpg"); /* Set your background image */
-  background-size: cover; /* Cover the entire area */
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Prevent image repeat */
+  background-image: url("/images/background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
+
+.team {
+  text-align: center;
+}
+
+.team .member-info {
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.team .member:hover .member-info {
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.9);
+}
+
 .Parallax_Scroll {
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
@@ -490,9 +496,6 @@ h2 {
 .Scene-5 {
   height: 100vh;
   min-height: 200vw;
-}
-
-.Svg-moiBg {
 }
 
 .Svg-moiFg {
