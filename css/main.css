@@ -1,0 +1,266 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
+html {
+  font-size: calc(1.01vw + 1.43vh);
+}
+
+body {
+  margin: 0;
+  font-family: "Comfortaa", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  background-color: black;
+  color: white;
+  overscroll-behavior: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.Log {
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: 0;
+  color: white;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.Parallax {
+  --p: 120;
+  height: 100vh;
+  overflow: hidden;
+  -webkit-perspective: calc(var(--p) * 1px);
+  perspective: calc(var(--p) * 1px);
+  -webkit-perspective-origin-x: 100%;
+  perspective-origin-x: 100%;
+  --p: 120; /* Perspective depth */
+  height: 100vh; /* Full viewport height */
+  overflow: hidden; /* Hide overflow */
+  perspective: calc(var(--p) * 1px); /* Perspective effect */
+  perspective-origin-x: 100%; /* Perspective origin */
+  background-image: url("/images/background.jpg"); /* Set your background image */
+  background-size: cover; /* Cover the entire area */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent image repeat */
+}
+.Parallax_Scroll {
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+.Parallax_Preserve {
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+.Parallax_Layer {
+  --t: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  -webkit-transform-origin-x: 100%;
+  transform-origin-x: 100%;
+  -webkit-transform: translateZ(calc(var(--t) * 1px))
+    scale(calc(1 + (var(--t) * -1) / var(--p)));
+  transform: translateZ(calc(var(--t) * 1px))
+    scale(calc(1 + (var(--t) * -1) / var(--p)));
+}
+
+.Scene {
+  position: relative;
+  min-height: 100vh;
+  padding: 5vw;
+}
+
+p,
+ul {
+  margin-top: 0;
+  margin-bottom: 5vw;
+}
+
+p {
+  text-align: justify;
+}
+
+h2 {
+  margin-top: 1rem;
+  margin-bottom: 0.6rem;
+  margin-bottom: 2.5vw;
+  font-size: max(1.6rem, 4vw);
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+.Svg {
+  display: block;
+}
+
+.Positioner {
+  position: absolute;
+}
+
+/* Scene 5 */
+.Scene-5 {
+  height: 100vh;
+  min-height: 200vw;
+}
+
+.Svg-moiBg {
+}
+
+.Svg-moiFg {
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  width: 100vw;
+  transform: translate(-50%, -50%);
+}
+
+#s-moi-spacecraft,
+#s-moi-spacecraftFire,
+#s-moi-marsSurface,
+#s-moi-marsShadow {
+  will-change: transform;
+}
+
+.moiText {
+  position: absolute;
+  right: 0;
+  max-width: 60%;
+  padding: 5vw;
+  transform: translate(0, -50%);
+  transition: opacity 0.5s;
+  opacity: 0;
+}
+.moiText-active {
+  opacity: 1;
+}
+
+.moiText > h2 {
+  margin: 0;
+  font-size: max(2.4rem, 6vw);
+  font-weight: 300;
+  line-height: 1.2;
+}
+.moiText > h3 {
+  margin: 0;
+  font-size: max(1.4rem, 3.5vw);
+  font-weight: 300;
+  line-height: 1.2;
+}
+.moiText p {
+  margin: 0;
+  font-size: max(0.8rem, 2vw);
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.moiText > p {
+  transform: translateY(1.5em);
+  transition: transform 0.5s;
+}
+.moiText-active > p {
+  transform: translateY(0em);
+}
+
+.moiText_Ticker {
+  display: grid;
+}
+.moiText_TickerItem {
+  grid-column: 1;
+  grid-row: 1;
+  transition: opacity 1s;
+  opacity: 0;
+}
+
+.moiText-3.moiText-active .moiText_TickerItem:nth-child(1) {
+  animation: tick4 24s ease 0s infinite;
+}
+.moiText-3.moiText-active .moiText_TickerItem:nth-child(2) {
+  animation: tick4 24s ease 6s infinite;
+}
+.moiText-3.moiText-active .moiText_TickerItem:nth-child(3) {
+  animation: tick4 24s ease 12s infinite;
+}
+.moiText-3.moiText-active .moiText_TickerItem:nth-child(4) {
+  animation: tick4 24s ease 18s infinite;
+}
+@keyframes tick4 {
+  0% {
+    opacity: 0;
+    transform: translateY(1.5em);
+  }
+  2% {
+    opacity: 1;
+    transform: translateY(0rem);
+  }
+  25% {
+    opacity: 1;
+    transform: translateY(0rem);
+  }
+  27% {
+    opacity: 0;
+    transform: translateY(-1.5em);
+  }
+}
+
+.moiText-4.moiText-active .moiText_TickerItem:nth-child(1) {
+  animation: tick2 10s ease 0s infinite;
+}
+.moiText-4.moiText-active .moiText_TickerItem:nth-child(2) {
+  animation: tick2 10s ease 5s infinite;
+}
+@keyframes tick2 {
+  0% {
+    opacity: 0;
+    transform: translateY(1.5em);
+  }
+  5% {
+    opacity: 1;
+    transform: translateY(0rem);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0rem);
+  }
+  55% {
+    opacity: 0;
+    transform: translateY(-1.5em);
+  }
+}
+
+.moiText-1 {
+  top: 0%;
+  max-width: 95%;
+  text-align: right;
+  transform: none;
+}
+.moiText-2 {
+  top: 22%;
+  max-width: 71%;
+}
+.moiText-3 {
+  top: 38%;
+  max-width: 61%;
+}
+.moiText-4 {
+  top: 60%;
+  max-width: 55%;
+}
+.moiText-5 {
+  top: 85%;
+  min-width: 65%;
+}

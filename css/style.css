@@ -1,8 +1,15 @@
 /* ---- reset ---- */
 body {
   margin: 0;
-  font: normal 75% Arial, Helvetica, sans-serif;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  list-style: none;
+  box-sizing: border-box;
+  background: #000;
+  color: white;
 }
+
 canvas {
   vertical-align: bottom;
 } /* ---- particles.js container ---- */
@@ -16,16 +23,6 @@ canvas {
   background-size: 20%;
   background-position: 50% 50%;
 } /* ---- stats.js ---- */
-
-body {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-  font-family: "Roboto";
-  list-style: none;
-  box-sizing: border-box;
-  background: #000;
-}
 
 nav {
   position: fixed;
@@ -134,206 +131,6 @@ p {
   height: 110vh;
   z-index: 3;
   filter: brightness(0.5);
-}
-
-/* SWIPER */
-
-#sectiontwo {
-  width: 100%;
-  height: 100vh;
-  position: relative;
-}
-
-.rockbg1 {
-  position: absolute;
-  transform: scale(0.2);
-  filter: brightness(0.2);
-  top: 20vh;
-  left: 0;
-  z-index: 1;
-}
-
-/* Container for Flex Layout */
-.container {
-  display: flex;
-  justify-content: flex-end; /* Align items to the right */
-  align-items: center;
-  height: 100vh; /* Full height to center vertically */
-  padding: 0; /* No padding to ensure it's right at the edge */
-}
-
-/* Reduced Size to 75% */
-ol {
-  all: unset;
-  aspect-ratio: 1 / 1;
-  container-type: inline-size;
-  display: grid;
-  width: 75%; /* Reduced to 75% of the original size */
-  margin-right: 0; /* No margin on the right */
-}
-
-li {
-  aspect-ratio: 1 / 1;
-  border: 1px dashed;
-  border-radius: 50%;
-  display: grid;
-  grid-area: 1 / 1;
-  place-self: center;
-  width: calc(var(--d, 1cqi) * 0.75); /* Reduced size to 75% */
-  &::after {
-    animation: rotate calc(var(--t, 3s) * 0.75) linear infinite; /* Adjusted speed for consistency */
-    aspect-ratio: 1 / 1;
-    background: var(--b, hsl(0, 0%, 50%));
-    border-radius: 50%;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-    content: "";
-    display: block;
-    offset-path: content-box;
-    width: calc(var(--w, 1cqi) * 0.75); /* Reduced size to 75% */
-  }
-}
-
-/* Other CSS (Sun and Planets) remains unchanged */
-
-@keyframes rotate {
-  to {
-    offset-distance: 100%;
-  }
-}
-
-/* Sun and Planets with Reduced Sizes */
-.sun {
-  --b: radial-gradient(circle, #f9d71c 0%, #f9a825 50%, #f9a825 100%);
-  --d: 7.5cqi; /* Reduced size to 75% */
-  --w: 6cqi;
-  border: 0;
-  &::after {
-    animation: none;
-    offset-path: none;
-    place-self: center;
-  }
-}
-
-.mercury {
-  --b: radial-gradient(circle, #c2c2c2 0%, #8a8a8a 100%);
-  --d: 11.25cqi; /* 75% of original */
-  --t: calc(2105.26ms * 0.75); /* Adjusted speed */
-  --w: calc(1.5395cqi * 0.75); /* 75% of original */
-}
-
-.venus {
-  --b: radial-gradient(circle, #f4d03f 0%, #c39c43 100%);
-  --d: 18.75cqi;
-  --t: calc(4210.53ms * 0.75); /* Adjusted speed */
-  --w: calc(1.954cqi * 0.75);
-}
-
-.earth {
-  --b: radial-gradient(circle, #3a82f7 0%, #2f9e44 80%, #1a5e20 100%);
-  --d: 26.25cqi;
-  --t: calc(6315.79ms * 0.75); /* Adjusted speed */
-  --w: calc(2.3685cqi * 0.75);
-}
-
-.mars {
-  --b: radial-gradient(circle, #e57373 0%, #af4448 100%);
-  --d: 33.75cqi;
-  --t: calc(8421.05ms * 0.75); /* Adjusted speed */
-  --w: calc(2.7829cqi * 0.75);
-}
-
-.jupiter {
-  --b: radial-gradient(circle, #d4a373 0%, #b36d32 50%, #f4e7d3 100%);
-  --d: 45cqi;
-  --t: calc(12631.58ms * 0.75); /* Adjusted speed */
-  --w: calc(3.61185cqi * 0.75);
-}
-
-.saturn {
-  --b: radial-gradient(circle, #e6dba0 0%, #c2a13e 100%);
-  --d: 56.25cqi;
-  --t: calc(14736.84ms * 0.75); /* Adjusted speed */
-  --w: calc(4.0263cqi * 0.75);
-}
-
-.uranus {
-  --b: radial-gradient(circle, #7de3f4 0%, #3ba0b5 100%);
-  --d: 63.375cqi;
-  --t: calc(10526.32ms * 0.75); /* Adjusted speed */
-  --w: calc(3.1974cqi * 0.75);
-}
-
-.neptune {
-  --b: radial-gradient(circle, #4c6ef5 0%, #1b3b8c 100%);
-  --d: 70.5cqi;
-  --t: calc(20000ms * 0.75); /* Adjusted speed */
-  --w: calc(4.5cqi * 0.75);
-}
-
-.planet-links {
-  width: 95%;
-  height: 5vh;
-  color: #fff;
-  position: absolute;
-  bottom: 0;
-  display: flex;
-  justify-content: space-evenly;
-  list-style: none;
-}
-
-.planet-links .swiper-pagination-bullet {
-  opacity: 0.2;
-  outline: none;
-}
-.planet-links .swiper-pagination-bullet-active {
-  color: #fff;
-  opacity: 1;
-}
-
-.swiper-pagination-clickable .swiper-pagination-bullet {
-  background: transparent;
-}
-
-.swiper-container {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  padding: 50px 0;
-}
-
-.swiper-wrapper {
-  transition-delay: 0.5s;
-}
-
-.swiper-slide {
-  height: 400px !important;
-  width: 90% !important;
-  background: transparent;
-}
-
-.swiper-slide:nth-child(1) .slide-img {
-  background-image: url("images/mercury.png");
-}
-.swiper-slide:nth-child(2) .slide-img {
-  background-image: url("images/venus.png");
-}
-.swiper-slide:nth-child(3) .slide-img {
-  background-image: url("images/earth1.png");
-}
-.swiper-slide:nth-child(4) .slide-img {
-  background-image: url("images/mars.png");
-}
-.swiper-slide:nth-child(5) .slide-img {
-  background-image: url("images/jupiter.png");
-}
-.swiper-slide:nth-child(6) .slide-img {
-  background-image: url("images/saturn.png");
-}
-.swiper-slide:nth-child(7) .slide-img {
-  background-image: url("images/uranus.png");
-}
-.swiper-slide:nth-child(8) .slide-img {
-  background-image: url("images/neptune.png");
 }
 
 .slide-img {
@@ -573,4 +370,271 @@ li {
   [data-aos-delay] {
     transition-delay: 0 !important;
   }
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  overflow: auto;
+}
+
+html {
+  font-size: calc(1.01vw + 1.43vh);
+}
+
+body {
+  margin: 0;
+  font-family: "Comfortaa", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  background-color: black;
+  color: white;
+  overscroll-behavior: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.Log {
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: 0;
+  color: white;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.Parallax {
+  --p: 120;
+  height: 100vh;
+  overflow: hidden;
+  -webkit-perspective: calc(var(--p) * 1px);
+  perspective: calc(var(--p) * 1px);
+  -webkit-perspective-origin-x: 100%;
+  perspective-origin-x: 100%;
+  --p: 120; /* Perspective depth */
+  height: 100vh; /* Full viewport height */
+  overflow: hidden; /* Hide overflow */
+  perspective: calc(var(--p) * 1px); /* Perspective effect */
+  perspective-origin-x: 100%; /* Perspective origin */
+  background-image: url("/images/background.jpg"); /* Set your background image */
+  background-size: cover; /* Cover the entire area */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent image repeat */
+}
+.Parallax_Scroll {
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+.Parallax_Preserve {
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+.Parallax_Layer {
+  --t: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  -webkit-transform-origin-x: 100%;
+  transform-origin-x: 100%;
+  -webkit-transform: translateZ(calc(var(--t) * 1px))
+    scale(calc(1 + (var(--t) * -1) / var(--p)));
+  transform: translateZ(calc(var(--t) * 1px))
+    scale(calc(1 + (var(--t) * -1) / var(--p)));
+}
+
+.Scene {
+  position: relative;
+  min-height: 100vh;
+  padding: 5vw;
+}
+
+p,
+ul {
+  margin-top: 0;
+  margin-bottom: 5vw;
+}
+
+p {
+  text-align: justify;
+}
+
+h2 {
+  margin-top: 1rem;
+  margin-bottom: 0.6rem;
+  margin-bottom: 2.5vw;
+  font-size: max(1.6rem, 4vw);
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+.Svg {
+  display: block;
+}
+
+.Positioner {
+  position: absolute;
+}
+
+/* Scene 5 */
+.Scene-5 {
+  height: 100vh;
+  min-height: 200vw;
+}
+
+.Svg-moiBg {
+}
+
+.Svg-moiFg {
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  width: 100vw;
+  transform: translate(-50%, -50%);
+}
+
+#s-moi-spacecraft,
+#s-moi-spacecraftFire,
+#s-moi-marsSurface,
+#s-moi-marsShadow {
+  will-change: transform;
+}
+
+.moiText {
+  position: absolute;
+  right: 0;
+  max-width: 60%;
+  padding: 5vw;
+  transform: translate(0, -50%);
+  transition: opacity 0.5s;
+  opacity: 0;
+}
+.moiText-active {
+  opacity: 1;
+}
+
+.moiText > h2 {
+  margin: 0;
+  font-size: max(2.4rem, 6vw);
+  font-weight: 300;
+  line-height: 1.2;
+}
+.moiText > h3 {
+  margin: 0;
+  font-size: max(1.4rem, 3.5vw);
+  font-weight: 300;
+  line-height: 1.2;
+}
+.moiText p {
+  margin: 0;
+  font-size: max(0.8rem, 2vw);
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.moiText > p {
+  transform: translateY(1.5em);
+  transition: transform 0.5s;
+}
+.moiText-active > p {
+  transform: translateY(0em);
+}
+
+.moiText_Ticker {
+  display: grid;
+}
+.moiText_TickerItem {
+  grid-column: 1;
+  grid-row: 1;
+  transition: opacity 1s;
+  opacity: 0;
+}
+
+.moiText-3.moiText-active .moiText_TickerItem:nth-child(1) {
+  animation: tick4 24s ease 0s infinite;
+}
+.moiText-3.moiText-active .moiText_TickerItem:nth-child(2) {
+  animation: tick4 24s ease 6s infinite;
+}
+.moiText-3.moiText-active .moiText_TickerItem:nth-child(3) {
+  animation: tick4 24s ease 12s infinite;
+}
+.moiText-3.moiText-active .moiText_TickerItem:nth-child(4) {
+  animation: tick4 24s ease 18s infinite;
+}
+@keyframes tick4 {
+  0% {
+    opacity: 0;
+    transform: translateY(1.5em);
+  }
+  2% {
+    opacity: 1;
+    transform: translateY(0rem);
+  }
+  25% {
+    opacity: 1;
+    transform: translateY(0rem);
+  }
+  27% {
+    opacity: 0;
+    transform: translateY(-1.5em);
+  }
+}
+
+.moiText-4.moiText-active .moiText_TickerItem:nth-child(1) {
+  animation: tick2 10s ease 0s infinite;
+}
+.moiText-4.moiText-active .moiText_TickerItem:nth-child(2) {
+  animation: tick2 10s ease 5s infinite;
+}
+@keyframes tick2 {
+  0% {
+    opacity: 0;
+    transform: translateY(1.5em);
+  }
+  5% {
+    opacity: 1;
+    transform: translateY(0rem);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0rem);
+  }
+  55% {
+    opacity: 0;
+    transform: translateY(-1.5em);
+  }
+}
+
+.moiText-1 {
+  top: 0%;
+  max-width: 95%;
+  text-align: right;
+  transform: none;
+}
+.moiText-2 {
+  top: 22%;
+  max-width: 71%;
+}
+.moiText-3 {
+  top: 38%;
+  max-width: 61%;
+}
+.moiText-4 {
+  top: 60%;
+  max-width: 55%;
+}
+.moiText-5 {
+  top: 85%;
+  min-width: 65%;
 }
