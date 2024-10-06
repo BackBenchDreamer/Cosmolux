@@ -13,6 +13,7 @@ body {
   scroll-behavior: smooth;
   background-color: #0d0d0d;
   color: #fff;
+  font-family: 'Nunito', sans-serif;
 }
 
 /* General Styling for Navbar */
