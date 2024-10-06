@@ -8,7 +8,6 @@
   box-sizing: border-box;
 }
 body {
-  font-family: Arial, sans-serif;
   line-height: 1.6;
   scroll-behavior: smooth;
   background-color: #0d0d0d;
@@ -168,22 +167,36 @@ nav {
   color: #fff;
 }
 
+
 /* Landing Page */
+.back-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
 #landing {
   height: 100vh;
-  background-image: url("orrery-background.jpg");
-  background-size: cover;
-  background-position: center;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  position: relative; /* Make sure the content is positioned relative to the section */
 }
+
+.landing-content {
+  z-index: 1;
+}
+
 .landing-content h1 {
   font-size: 4rem;
   color: white;
   animation: fadeIn 1s ease-in-out;
+  text-align: center; /* Center text inside the div */
 }
-
 /* Redirect Page */
 #redirect {
   padding: 100px;
