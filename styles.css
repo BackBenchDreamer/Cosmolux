@@ -370,6 +370,12 @@ nav {
   border-radius: 50%;
 }
 
+.icon {
+  width: 24px; 
+  height: 24px; 
+}
+
+
 /* Carousel Controls */
 .carousel-control {
   background: none;
