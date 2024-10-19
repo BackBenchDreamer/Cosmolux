@@ -1,363 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Cosmolux</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cosmolux</title>
 
-        <link
-            href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;600;700&display=swap"
-            rel="stylesheet"
-        />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;600;700&display=swap" rel="stylesheet">
 
-        <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css" />
 
-        <!-- Favicon links -->
-        <link
-            rel="apple-touch-icon"
-            sizes="180x180"
-            href="/data/apple-touch-icon.png"
-        />
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="32x32"
-            href="/data/favicon-32x32.png"
-        />
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="16x16"
-            href="/data/favicon-16x16.png"
-        />
-        <link rel="manifest" href="/data/site.webmanifest" />
+    <!-- Favicon links -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/data/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/data/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/data/favicon-16x16.png">
+    <link rel="manifest" href="/data/site.webmanifest">
 
-        <script src="script.js" defer></script>
-    </head>
-    <body>
-        <!-- Navigation Bar -->
-        <nav>
-            <div class="logo">
-                <img src="/data/bg.png" alt="Cosmolux Logo" class="logo-img" />
-            </div>
-            <ul class="nav-links">
-                <li><a href="#landing">Home</a></li>
-                <li><a href="#redirect">Explore</a></li>
-                <li><a href="#description">Learn</a></li>
-                <li><a href="#about">About</a></li>
-            </ul>
-            <div class="hamburger">
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line"></div>
-            </div>
-        </nav>
-        <div class="mobile-nav-overlay">
-            <ul class="mobile-nav-links">
-                <li><a href="#landing">Home</a></li>
-                <li><a href="#redirect">Explore</a></li>
-                <li><a href="#description">Learn</a></li>
-                <li><a href="#about">About</a></li>
-            </ul>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+    <div class="logo">
+        <img src="/data/bg.png" alt="Cosmolux Logo" class="logo-img">
+    </div>
+    <ul class="nav-links">
+        <li><a href="#landing">Home</a></li>
+        <li><a href="#redirect">Explore</a></li>
+        <li><a href="#description">Learn</a></li>
+        <li><a href="#about">About</a></li>
+    </ul>
+    <div class="hamburger">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+    </nav>
+    <div class="mobile-nav-overlay">
+    <ul class="mobile-nav-links">
+        <li><a href="#landing">Home</a></li>
+        <li><a href="#redirect">Explore</a></li>
+        <li><a href="#description">Learn</a></li>
+        <li><a href="#about">About</a></li>
+    </ul>
+    </div>
+
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollTopBtn">⬆️</button>
+
+    <!-- Landing Page -->
+    <section id="landing">
+      <video autoplay muted loop playsinline class="back-video">
+        <source src="/data/BACKGROUND.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="landing-content">
+        <h1>Cosmolux</h1>
+      </div>
+    </section>
+
+    <!-- Redirect Page -->
+    <section id="redirect">
+      <h2>Explore the Cosmos</h2>
+      <p>
+        Explore the cosmos through our interactive 3D and 2D Orrery models. Track Near-Earth Objects in real time, visualize celestial movements, and uncover the wonders of space. Whether in immersive 3D or simplified 2D, the universe is now at your fingertips.
+      </p>
+      <div class="button-container">
+    <a href="/Dynamic-Orrery-D3/index.html">
+      <button id="cta-btn-3d">Explore Dynamic Orrery</button>
+    </a>
+    <a href="/Static-Orrery-D3/viewer.html">
+      <button id="cta-btn-static">Explore Static Orrery</button>
+    </a>
+  </div>
+    </section>
+
+
+    <!-- Description Page -->
+    <section id="description">
+      <h1>Discover Cosmolux: Unveil the Cards to Explore More!</h1>
+      <div class="container">
+        <div class="panel active" style="background-color: #1d1d1d">
+          <h3>What is an Orrery?</h3>
+          <p>
+            An Orrery is a mechanical model that represents the positions, motions, and orbits of planets and moons in the solar system. It typically shows the planets revolving around a central object, usually the Sun. Modern digital versions, like Cosmolux, use 3D modeling and visualization to simulate planetary motions.
+          </p>
         </div>
+        <div class="panel" style="background-color: #2e2e2e">
+          <h3>What is the history of the Orrery?</h3>
+          <p>
+            The Orrery is named after Charles Boyle, the 4th Earl of Orrery, for whom a complex mechanical model was made in the early 18th century. The original design traces back to the work of Christiaan Huygens and George Graham, who designed gear systems to imitate planetary orbits. Early Orreries were manually operated but provided a way to understand celestial mechanics before the advent of telescopes.
+          </p>
+        </div>
+        <div class="panel" style="background-color: #3e3e3e">
+          <h3>Why did you choose to use Three.js and D3.js for Cosmolux?</h3>
+          <p>
+            Three.js and D3.js were chosen for Cosmolux because they are powerful tools for creating interactive visualizations. Three.js enables 3D rendering, allowing for realistic simulations of the orrery, while D3.js is excellent for handling complex data visualizations like the orbits and movements of Near-Earth Objects (NEOs). Together, they provide the necessary flexibility and performance for creating an engaging and interactive educational experience.
+          </p>
+        </div>
+        <div class="panel" style="background-color: #4e4e4e">
+          <h3>How accurate is the orrery in Cosmolux?</h3>
+          <p>The orrery in Cosmolux is 100% accurate, using real-time data from reliable sources like NASA's Near-Earth Object database. It not only reflects the true positions, orbits, and trajectories of NEOs but also offers features that let users control the simulation speed. Users can fast forward from real-time to days or even months per second, allowing them to explore celestial dynamics over extended periods with full precision.</p>
+        </div>
+        <div class="panel" style="background-color: #5e5e5e">
+          <h3>How does Cosmolux help users understand Near-Earth Objects (NEOs)?</h3>
+          <p>Cosmolux provides an interactive platform where users can visualize the orbits of NEOs, track their movements relative to Earth, and learn about potential impacts or close approaches. The 3D environment allows for exploration of NEO data in a way that is easy to grasp, making complex astronomical concepts more intuitive.</p>
+        </div>
+        <div class="panel" style="background-color: #6e6e6e">
+          <h3>What future features could enhance the Cosmolux orrery?</h3>
+          <p>Future enhancements for the Cosmolux orrery could include real-time data updates on NEOs, more detailed planetary textures, additional astronomical objects (such as moons or distant comets), and the integration of augmented reality (AR) features to allow users to experience the orrery in their physical space. These additional questions offer more insights into the functionality and potential of Cosmolux as an educational tool focused on the orrery concept.</p>
+        </div>
+      </div>
+    </section>
 
-        <!-- Scroll to Top Button -->
-        <button id="scrollTopBtn">⬆️</button>
+<section id="about">
+  <h1>About Us</h1>
+  <div class="carousel">
+    <button class="carousel-control prev">◀️</button>
+    <div class="profile-cards">
+      <div class="profile-card">
+        <img src="/data/team/Jey.jpg" alt="Profile 1" />
+        <h2>Jeyadheep V</h2>
+        <p>Depressed? Maybe. Techy? Absolutely. Sleep? What’s that?</p>
+        <a href="https://www.linkedin.com/in/jeyv/" target="_blank"><img class="icon" src="/data/linkedin-icon.svg" alt="LinkedIn" style="width: 50px; height: 50px;"/></a>
+        <a href="https://github.com/BackBenchDreamer" target="_blank"><img class="icon" src="/data/github-icon.svg" alt="GitHub" style="width: 50px; height: 50px;"/></a>
+      </div>
+      <div class="profile-card">
+        <img src="/data/team/Ajay.jpeg" alt="Profile 2" />
+        <h2>V Ajay</h2>
+        <p>A smooth coder by day, relationship-seeker by night.</p>
+        <a href="http://www.linkedin.com/in/vajayc" target="_blank"><img class="icon" src="/data/linkedin-icon.svg" alt="LinkedIn" style="width: 50px; height: 50px;"/></a>
+        <a href="https://github.com/ajayvofficial0" target="_blank"><img class="icon" src="/data/github-icon.svg" alt="GitHub" style="width: 50px; height: 50px;"/></a>
+      </div>
+      <div class="profile-card">
+        <img src="/data/team/Chet.jpeg" alt="Profile 3" />
+        <h2>R Chetanaananda</h2>
+        <p>Letting life flow as smoothly as their code.</p>
+        <a href="http://www.linkedin.com/in/chetanaananda-r-91a7782a7" target="_blank"><img class="icon" src="/data/linkedin-icon.svg" alt="LinkedIn" style="width: 50px; height: 50px;"/></a>
+        <a href="https://github.com/anonymus-code" target="_blank"><img class="icon" src="/data/github-icon.svg" alt="GitHub" style="width: 50px; height: 50px;"/></a>
+      </div>
+      <div class="profile-card">
+        <img src="/data/team/Shreya.jpeg" alt="Profile 4" />
+        <h2>Shreya H Rao</h2>
+        <p>Depressed but never defeated, always pushing forward.</p>
+        <a href="https://www.linkedin.com/in/shreya-rao-27b3a32a8" target="_blank"><img class="icon" src="/data/linkedin-icon.svg" alt="LinkedIn" style="width: 50px; height: 50px;"/></a>
+        <a href="https://github.com/riball" target="_blank"><img class="icon" src="/data/github-icon.svg" alt="GitHub" style="width: 50px; height: 50px;"/></a>
+      </div>
+      <div class="profile-card">
+        <img src="/data/team/Sarayu.jpg" alt="Profile 5" />
+        <h2>Sarayu Kondasani</h2>
+        <p>Quiet genius who’s got creativity on full blast.</p>
+        <a href="https://www.linkedin.com/in/sarayu-kondasani-3b8495297" target="_blank"><img class="icon" src="/data/linkedin-icon.svg" alt="LinkedIn" style="width: 50px; height: 50px;"/></a>
+        <a href="https://github.com/sarayu231" target="_blank"><img class="icon" src="/data/github-icon.svg" alt="GitHub" style="width: 50px; height: 50px;"/></a>
+      </div>
+      <div class="profile-card">
+        <img src="/data/team/AbiPrrii.jpg" alt="Profile 6" />
+        <h2>Yisol Choi</h2>
+        <p>The diligent one who brings laughter and life to the team.</p>
+        <a href="https://www.linkedin.com/in/yisol-choi-5a6270331" target="_blank"><img class="icon" src="/data/linkedin-icon.svg" alt="LinkedIn" style="width: 50px; height: 50px;"/></a>
+        <a href="https://github.com/Abigail-choi04" target="_blank"><img class="icon" src="/data/github-icon.svg" alt="GitHub" style="width: 50px; height: 50px;"/></a>
+      </div>
+    </div>
+    <button class="carousel-control next">▶️</button>
+  </div>  
+</section>
 
-        <!-- Landing Page -->
-        <section id="landing">
-            <video autoplay muted loop playsinline class="back-video">
-                <source src="./data/BACKGROUND.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-            </video>
-            <div class="landing-content">
-                <h1>Cosmolux</h1>
-            </div>
-        </section>
 
-        <!-- Redirect Page -->
-        <section id="redirect">
-            <h2>Explore the Cosmos</h2>
-            <p>
-                Explore the cosmos through our interactive 3D and 2D Orrery
-                models. Track Near-Earth Objects in real time, visualize
-                celestial movements, and uncover the wonders of space. Whether
-                in immersive 3D or simplified 2D, the universe is now at your
-                fingertips.
-            </p>
-            <div class="button-container">
-                <a href="/Dynamic-Orrery-D3/index.html">
-                    <button id="cta-btn-3d">Explore Dynamic Orrery</button>
-                </a>
-                <a href="/Static-Orrery-D3/viewer.html">
-                    <button id="cta-btn-static">Explore Static Orrery</button>
-                </a>
-            </div>
-        </section>
+    <!-- Footer -->
+    <footer style="background-color: #222; color: #fff; padding: 20px; text-align: center;">
+      <div style="max-width: 1200px; margin: 0 auto;">
+        <h3 style="color: #ffcc00;">Cosmolux</h3>
+        <p>Exploring the wonders of space, one galaxy at a time.</p>
 
-        <!-- Description Page -->
-        <section id="description">
-            <h1>Discover Cosmolux: Unveil the Cards to Explore More!</h1>
-            <div class="container">
-                <div class="panel active" style="background-color: #1d1d1d">
-                    <h3>What is an Orrery?</h3>
-                    <p>
-                        An Orrery is a mechanical model that represents the
-                        positions, motions, and orbits of planets and moons in
-                        the solar system. It typically shows the planets
-                        revolving around a central object, usually the Sun.
-                        Modern digital versions, like Cosmolux, use 3D modeling
-                        and visualization to simulate planetary motions.
-                    </p>
-                </div>
-                <div class="panel" style="background-color: #2e2e2e">
-                    <h3>What is the history of the Orrery?</h3>
-                    <p>
-                        The Orrery is named after Charles Boyle, the 4th Earl of
-                        Orrery, for whom a complex mechanical model was made in
-                        the early 18th century. The original design traces back
-                        to the work of Christiaan Huygens and George Graham, who
-                        designed gear systems to imitate planetary orbits. Early
-                        Orreries were manually operated but provided a way to
-                        understand celestial mechanics before the advent of
-                        telescopes.
-                    </p>
-                </div>
-                <div class="panel" style="background-color: #3e3e3e">
-                    <h3>
-                        Why did you choose to use Three.js and D3.js for
-                        Cosmolux?
-                    </h3>
-                    <p>
-                        Three.js and D3.js were chosen for Cosmolux because they
-                        are powerful tools for creating interactive
-                        visualizations. Three.js enables 3D rendering, allowing
-                        for realistic simulations of the orrery, while D3.js is
-                        excellent for handling complex data visualizations like
-                        the orbits and movements of Near-Earth Objects (NEOs).
-                        Together, they provide the necessary flexibility and
-                        performance for creating an engaging and interactive
-                        educational experience.
-                    </p>
-                </div>
-                <div class="panel" style="background-color: #4e4e4e">
-                    <h3>How accurate is the orrery in Cosmolux?</h3>
-                    <p>
-                        The orrery in Cosmolux is 100% accurate, using real-time
-                        data from reliable sources like NASA's Near-Earth Object
-                        database. It not only reflects the true positions,
-                        orbits, and trajectories of NEOs but also offers
-                        features that let users control the simulation speed.
-                        Users can fast forward from real-time to days or even
-                        months per second, allowing them to explore celestial
-                        dynamics over extended periods with full precision.
-                    </p>
-                </div>
-                <div class="panel" style="background-color: #5e5e5e">
-                    <h3>
-                        How does Cosmolux help users understand Near-Earth
-                        Objects (NEOs)?
-                    </h3>
-                    <p>
-                        Cosmolux provides an interactive platform where users
-                        can visualize the orbits of NEOs, track their movements
-                        relative to Earth, and learn about potential impacts or
-                        close approaches. The 3D environment allows for
-                        exploration of NEO data in a way that is easy to grasp,
-                        making complex astronomical concepts more intuitive.
-                    </p>
-                </div>
-                <div class="panel" style="background-color: #6e6e6e">
-                    <h3>
-                        What future features could enhance the Cosmolux orrery?
-                    </h3>
-                    <p>
-                        Future enhancements for the Cosmolux orrery could
-                        include real-time data updates on NEOs, more detailed
-                        planetary textures, additional astronomical objects
-                        (such as moons or distant comets), and the integration
-                        of augmented reality (AR) features to allow users to
-                        experience the orrery in their physical space. These
-                        additional questions offer more insights into the
-                        functionality and potential of Cosmolux as an
-                        educational tool focused on the orrery concept.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <section id="about">
-            <h1>About Us</h1>
-            <div class="carousel">
-                <button class="carousel-control prev">◀️</button>
-                <div class="profile-cards">
-                    <div class="profile-card">
-                        <img src="/data/team/Jey.jpg" alt="Profile 1" />
-                        <h2>Jeyadheep V</h2>
-                        <p>
-                            Depressed? Maybe. Techy? Absolutely. Sleep? What’s
-                            that?
-                        </p>
-                        <a
-                            href="https://www.linkedin.com/in/jeyv/"
-                            target="_blank"
-                            ><img
-                                class="icon"
-                                src="/data/linkedin-icon.svg"
-                                alt="LinkedIn"
-                                style="width: 50px; height: 50px"
-                        /></a>
-                        <a
-                            href="https://github.com/BackBenchDreamer"
-                            target="_blank"
-                            ><img
-                                class="icon"
-                                src="/data/github-icon.svg"
-                                alt="GitHub"
-                                style="width: 50px; height: 50px"
-                        /></a>
-                    </div>
-                    <div class="profile-card">
-                        <img src="/data/team/Ajay.jpeg" alt="Profile 2" />
-                        <h2>V Ajay</h2>
-                        <p>
-                            A smooth coder by day, relationship-seeker by night.
-                        </p>
-                        <a
-                            href="http://www.linkedin.com/in/vajayc"
-                            target="_blank"
-                            ><img
-                                class="icon"
-                                src="/data/linkedin-icon.svg"
-                                alt="LinkedIn"
-                                style="width: 50px; height: 50px"
-                        /></a>
-                        <a
-                            href="https://github.com/ajayvofficial0"
-                            target="_blank"
-                            ><img
-                                class="icon"
-                                src="/data/github-icon.svg"
-                                alt="GitHub"
-                                style="width: 50px; height: 50px"
-                        /></a>
-                    </div>
-                    <div class="profile-card">
-                        <img src="/data/team/Chet.jpeg" alt="Profile 3" />
-                        <h2>R Chetanaananda</h2>
-                        <p>Letting life flow as smoothly as their code.</p>
-                        <a
-                            href="http://www.linkedin.com/in/chetanaananda-r-91a7782a7"
-                            target="_blank"
-                            ><img
-                                class="icon"
-                                src="/data/linkedin-icon.svg"
-                                alt="LinkedIn"
-                                style="width: 50px; height: 50px"
-                        /></a>
-                        <a
-                            href="https://github.com/anonymus-code"
-                            target="_blank"
-                            ><img
-                                class="icon"
-                                src="/data/github-icon.svg"
-                                alt="GitHub"
-                                style="width: 50px; height: 50px"
-                        /></a>
-                    </div>
-                    <div class="profile-card">
-                        <img src="/data/team/Shreya.jpeg" alt="Profile 4" />
-                        <h2>Shreya H Rao</h2>
-                        <p>
-                            Depressed but never defeated, always pushing
-                            forward.
-                        </p>
-                        <a
-                            href="https://www.linkedin.com/in/shreya-rao-27b3a32a8"
-                            target="_blank"
-                            ><img
-                                class="icon"
-                                src="/data/linkedin-icon.svg"
-                                alt="LinkedIn"
-                                style="width: 50px; height: 50px"
-                        /></a>
-                        <a href="https://github.com/riball" target="_blank"
-                            ><img
-                                class="icon"
-                                src="/data/github-icon.svg"
-                                alt="GitHub"
-                                style="width: 50px; height: 50px"
-                        /></a>
-                    </div>
-                    <div class="profile-card">
-                        <img src="/data/team/Sarayu.jpg" alt="Profile 5" />
-                        <h2>Sarayu Kondasani</h2>
-                        <p>Quiet genius who’s got creativity on full blast.</p>
-                        <a
-                            href="https://www.linkedin.com/in/sarayu-kondasani-3b8495297"
-                            target="_blank"
-                            ><img
-                                class="icon"
-                                src="/data/linkedin-icon.svg"
-                                alt="LinkedIn"
-                                style="width: 50px; height: 50px"
-                        /></a>
-                        <a href="https://github.com/sarayu231" target="_blank"
-                            ><img
-                                class="icon"
-                                src="/data/github-icon.svg"
-                                alt="GitHub"
-                                style="width: 50px; height: 50px"
-                        /></a>
-                    </div>
-                    <div class="profile-card">
-                        <img src="/data/team/AbiPrrii.jpg" alt="Profile 6" />
-                        <h2>Yisol Choi</h2>
-                        <p>
-                            The diligent one who brings laughter and life to the
-                            team.
-                        </p>
-                        <a
-                            href="https://www.linkedin.com/in/yisol-choi-5a6270331"
-                            target="_blank"
-                            ><img
-                                class="icon"
-                                src="/data/linkedin-icon.svg"
-                                alt="LinkedIn"
-                                style="width: 50px; height: 50px"
-                        /></a>
-                        <a
-                            href="https://github.com/Abigail-choi04"
-                            target="_blank"
-                            ><img
-                                class="icon"
-                                src="/data/github-icon.svg"
-                                alt="GitHub"
-                                style="width: 50px; height: 50px"
-                        /></a>
-                    </div>
-                </div>
-                <button class="carousel-control next">▶️</button>
-            </div>
-        </section>
-
-        <!-- Footer -->
-        <footer
-            style="
-                background-color: #222;
-                color: #fff;
-                padding: 20px;
-                text-align: center;
-            "
-        >
-            <div style="max-width: 1200px; margin: 0 auto">
-                <h3 style="color: #ffcc00">Cosmolux</h3>
-                <p>Exploring the wonders of space, one galaxy at a time.</p>
-
-                <p style="margin-top: 20px">
-                    &copy; 2024 Cosmolux. All rights reserved.
-                </p>
-            </div>
-        </footer>
-    </body>
+        <p style="margin-top: 20px;">&copy; 2024 Cosmolux. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
 </html>
