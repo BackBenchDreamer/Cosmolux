@@ -3,7 +3,7 @@
 Cosmolux is an interactive 3D web application developed for the NASA Space Apps Challenge. It visualizes Near-Earth Objects (NEOs) in real-time, offering users an immersive experience to explore asteroids, comets, and other celestial bodies near Earth.
 
 ## 🔗 Live Demo
-Experience Cosmolux in action: [cosmolux.netlify.app](https://cosmolux.netlify.app){:target="_blank"}
+Experience Cosmolux in action: <a href="https://cosmolux.netlify.app" target="_blank">cosmolux.netlify.app</a>
 
 ## Demo
 <div style="display: flex; align-items: center; justify-content: space-between;">
