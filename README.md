@@ -22,7 +22,7 @@ Dynamic Information Panels: Access detailed data on each object, including size,
 Interactive Timeline Controls: Observe the motion of NEOs over time, enhancing understanding of their trajectories.
 
 ## 🚀 Purpose
-Cosmolux addresses the challenge of making complex astronomical data accessible and engaging. By integrating NASA's Near-Earth Object API, it transforms raw data into an intuitive visual interface, aiding in education and awareness about space hazards and planetary defense.
+Cosmolux addresses the challenge of making complex astronomical data accessible and engaging. By integrating NASA's Near-Earth Object(NEO) API, it transforms raw data into an intuitive visual interface, aiding in education and awareness about space hazards and planetary defense.
 
 ## 🛠️ Technologies Used
 Three.js: For rendering interactive 3D graphics in the browser.
