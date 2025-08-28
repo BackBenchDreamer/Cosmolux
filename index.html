@@ -1,179 +1,298 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cosmolux</title>
-
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;600;700&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="styles.css" />
-
-    <!-- Favicon links -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/data/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/data/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/data/favicon-16x16.png">
-    <link rel="manifest" href="/data/site.webmanifest">
-
-    <script src="script.js" defer></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmolux - Interactive 3D Celestial Visualization</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <nav>
-    <div class="logo">
-        <img src="/data/bg.png" alt="Cosmolux Logo" class="logo-img">
-    </div>
-    <ul class="nav-links">
-        <li><a href="#landing">Home</a></li>
-        <li><a href="#redirect">Explore</a></li>
-        <li><a href="#description">Learn</a></li>
-        <li><a href="#about">About</a></li>
-    </ul>
-    <div class="hamburger">
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
-    </div>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#home">Cosmolux</a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#orrery" class="nav-link">Orrery</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#team" class="nav-link">Our Team</a></li>
+            </ul>
+        </div>
     </nav>
-    <div class="mobile-nav-overlay">
-    <ul class="mobile-nav-links">
-        <li><a href="#landing">Home</a></li>
-        <li><a href="#redirect">Explore</a></li>
-        <li><a href="#description">Learn</a></li>
-        <li><a href="#about">About</a></li>
-    </ul>
-    </div>
 
+    <!-- Section Transition Overlay -->
+    <div class="transition-overlay"></div>
 
-    <!-- Scroll to Top Button -->
-    <button id="scrollTopBtn">⬆️</button>
-
-    <!-- Landing Page -->
-    <section id="landing">
-      <video autoplay muted loop playsinline class="back-video">
-        <source src="/data/BACKGROUND.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-      <div class="landing-content">
-        <h1>Cosmolux</h1>
-      </div>
+    <!-- Hero Section -->
+    <section id="home" class="section hero">
+        <div class="stars"></div>
+        <div class="nebula"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Cosmolux</h1>
+            <p class="hero-tagline">An interactive 3D web application developed for the NASA Space Apps Challenge. Visualize Near-Earth Objects (NEOs) in real-time, offering an immersive experience to explore asteroids, comets, and other celestial bodies near Earth.</p>
+            <button class="cta-button">Explore Cosmolux</button>
+        </div>
     </section>
 
-    <!-- Redirect Page -->
-    <section id="redirect">
-      <h2>Explore the Cosmos</h2>
-      <p>
-        Explore the cosmos through our interactive 3D and 2D Orrery models. Track Near-Earth Objects in real time, visualize celestial movements, and uncover the wonders of space. Whether in immersive 3D or simplified 2D, the universe is now at your fingertips.
-      </p>
-      <div class="button-container">
-    <a href="/Dynamic-Orrery-D3/index.html">
-      <button id="cta-btn-3d">Explore Dynamic Orrery</button>
-    </a>
-    <a href="/Static-Orrery-D3/viewer.html">
-      <button id="cta-btn-static">Explore Static Orrery</button>
-    </a>
-  </div>
+    <!-- Orrery Section -->
+    <section id="orrery" class="section orrery-section">
+        <div class="stars-variant"></div>
+        <div class="nebula-variant"></div>
+        <div class="container">
+            <div class="features-grid">
+                <!-- Static 3D Orrery Card -->
+                <div class="feature-card">
+                    <div class="card-visual static-visual">
+                        <div class="orbit-system">
+                            <div class="sun"></div>
+                            <div class="orbit orbit-1">
+                                <div class="planet planet-1"></div>
+                            </div>
+                            <div class="orbit orbit-2">
+                                <div class="planet planet-2"></div>
+                            </div>
+                            <div class="orbit orbit-3">
+                                <div class="planet planet-3"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Static 3D Orrery</h3>
+                        <p class="card-description">Explore foundational celestial mechanics in a visually engaging, non-interactive three-dimensional model.</p>
+                        <a href="Static-Orrery-D3/viewer.html" target="_blank" class="card-button">View Static Orrery</a>
+                    </div>
+                </div>
+
+                <!-- Dynamic 3D Orrery Card -->
+                <div class="feature-card">
+                    <div class="card-visual dynamic-visual">
+                        <div class="orbit-system animated">
+                            <div class="sun pulsing"></div>
+                            <div class="orbit orbit-1 rotating">
+                                <div class="planet planet-1"></div>
+                            </div>
+                            <div class="orbit orbit-2 rotating-slow">
+                                <div class="planet planet-2"></div>
+                            </div>
+                            <div class="orbit orbit-3 rotating-slower">
+                                <div class="planet planet-3"></div>
+                            </div>
+                            <div class="asteroid-trail"></div>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Dynamic 3D Orrery</h3>
+                        <p class="card-description">Immerse yourself in a real-time, interactive 3D visualization of our solar system and NEOs.</p>
+                        <a href="Dynamic-Orrery-D3/index.html" target="_blank" class="card-button">Launch Dynamic Orrery</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-
-    <!-- Description Page -->
-    <section id="description">
-      <h1>Discover Cosmolux: Unveil the Cards to Explore More!</h1>
-      <div class="container">
-        <div class="panel active" style="background-color: #1d1d1d">
-          <h3>What is an Orrery?</h3>
-          <p>
-            An Orrery is a mechanical model that represents the positions, motions, and orbits of planets and moons in the solar system. It typically shows the planets revolving around a central object, usually the Sun. Modern digital versions, like Cosmolux, use 3D modeling and visualization to simulate planetary motions.
-          </p>
+    <!-- About Section -->
+    <section id="about" class="section about-section">
+        <div class="space-particles"></div>
+        <div class="container">
+            <h2 class="section-title">About Near-Earth Objects</h2>
+            <div class="accordion-container">
+                <div class="accordion-item" data-accordion="1">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">🪐</span>
+                        <h3 class="accordion-title">What is an Orrery?</h3>
+                        <span class="accordion-arrow">+</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>An orrery is a mechanical model of the solar system, illustrating the relative positions and motions of the planets and moons. Cosmolux brings this concept to life, focusing on the dynamic movement of Near-Earth Objects.</p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item" data-accordion="2">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">⚠️</span>
+                        <h3 class="accordion-title">The Threat of NEOs</h3>
+                        <span class="accordion-arrow">+</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Near-Earth Objects pose potential threats to our planet, with over 34,000 known asteroids crossing Earth's orbital path. Understanding their trajectories is crucial for planetary defense strategies.</p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item" data-accordion="3">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">🚀</span>
+                        <h3 class="accordion-title">NASA Space Apps Challenge</h3>
+                        <span class="accordion-arrow">+</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>The world's largest global hackathon, bringing together diverse teams to solve challenges using NASA's open data. Cosmolux demonstrates innovative technology making astronomical data accessible.</p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item" data-accordion="4">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">🔭</span>
+                        <h3 class="accordion-title">How We Track NEOs</h3>
+                        <span class="accordion-arrow">+</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Modern detection relies on ground-based telescopes and space observatories that continuously scan the sky. Advanced algorithms process observations to calculate precise orbits and assess collision probabilities.</p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item" data-accordion="5">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">🌌</span>
+                        <h3 class="accordion-title">Beyond Our Solar System</h3>
+                        <span class="accordion-arrow">+</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Space exploration extends far beyond our solar system through exoplanet research, interstellar missions, and deep space observations that help us understand our place in the cosmos.</p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item" data-accordion="6">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">🛰️</span>
+                        <h3 class="accordion-title">Future of Space Exploration</h3>
+                        <span class="accordion-arrow">+</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>The future holds asteroid mining missions, advanced propulsion systems, and international cooperation. NEO research provides insights into the early solar system and valuable resources.</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="panel" style="background-color: #2e2e2e">
-          <h3>What is the history of the Orrery?</h3>
-          <p>
-            The Orrery is named after Charles Boyle, the 4th Earl of Orrery, for whom a complex mechanical model was made in the early 18th century. The original design traces back to the work of Christiaan Huygens and George Graham, who designed gear systems to imitate planetary orbits. Early Orreries were manually operated but provided a way to understand celestial mechanics before the advent of telescopes.
-          </p>
-        </div>
-        <div class="panel" style="background-color: #3e3e3e">
-          <h3>Why did you choose to use Three.js and D3.js for Cosmolux?</h3>
-          <p>
-            Three.js and D3.js were chosen for Cosmolux because they are powerful tools for creating interactive visualizations. Three.js enables 3D rendering, allowing for realistic simulations of the orrery, while D3.js is excellent for handling complex data visualizations like the orbits and movements of Near-Earth Objects (NEOs). Together, they provide the necessary flexibility and performance for creating an engaging and interactive educational experience.
-          </p>
-        </div>
-        <div class="panel" style="background-color: #4e4e4e">
-          <h3>How accurate is the orrery in Cosmolux?</h3>
-          <p>The orrery in Cosmolux is 100% accurate, using real-time data from reliable sources like NASA's Near-Earth Object database. It not only reflects the true positions, orbits, and trajectories of NEOs but also offers features that let users control the simulation speed. Users can fast forward from real-time to days or even months per second, allowing them to explore celestial dynamics over extended periods with full precision.</p>
-        </div>
-        <div class="panel" style="background-color: #5e5e5e">
-          <h3>How does Cosmolux help users understand Near-Earth Objects (NEOs)?</h3>
-          <p>Cosmolux provides an interactive platform where users can visualize the orbits of NEOs, track their movements relative to Earth, and learn about potential impacts or close approaches. The 3D environment allows for exploration of NEO data in a way that is easy to grasp, making complex astronomical concepts more intuitive.</p>
-        </div>
-        <div class="panel" style="background-color: #6e6e6e">
-          <h3>What future features could enhance the Cosmolux orrery?</h3>
-          <p>Future enhancements for the Cosmolux orrery could include real-time data updates on NEOs, more detailed planetary textures, additional astronomical objects (such as moons or distant comets), and the integration of augmented reality (AR) features to allow users to experience the orrery in their physical space. These additional questions offer more insights into the functionality and potential of Cosmolux as an educational tool focused on the orrery concept.</p>
-        </div>
-      </div>
     </section>
 
-<section id="about">
-  <h1>About Us</h1>
-  <div class="carousel">
-    <button class="carousel-control prev">◀️</button>
-    <div class="profile-cards">
-      <div class="profile-card">
-        <img src="/data/team/Jey.jpg" alt="Profile 1" />
-        <h2>Jeyadheep V</h2>
-        <p>Depressed? Maybe. Techy? Absolutely. Sleep? What’s that?</p>
-        <a href="https://www.linkedin.com/in/jeyv/" target="_blank"><img class="icon" src="/data/linkedin-icon.svg" alt="LinkedIn" style="width: 50px; height: 50px;"/></a>
-        <a href="https://github.com/BackBenchDreamer" target="_blank"><img class="icon" src="/data/github-icon.svg" alt="GitHub" style="width: 50px; height: 50px;"/></a>
-      </div>
-      <div class="profile-card">
-        <img src="/data/team/Ajay.jpeg" alt="Profile 2" />
-        <h2>V Ajay</h2>
-        <p>A smooth coder by day, relationship-seeker by night.</p>
-        <a href="http://www.linkedin.com/in/vajayc" target="_blank"><img class="icon" src="/data/linkedin-icon.svg" alt="LinkedIn" style="width: 50px; height: 50px;"/></a>
-        <a href="https://github.com/ajayvofficial0" target="_blank"><img class="icon" src="/data/github-icon.svg" alt="GitHub" style="width: 50px; height: 50px;"/></a>
-      </div>
-      <div class="profile-card">
-        <img src="/data/team/Chet.jpeg" alt="Profile 3" />
-        <h2>R Chetanaananda</h2>
-        <p>Letting life flow as smoothly as their code.</p>
-        <a href="http://www.linkedin.com/in/chetanaananda-r-91a7782a7" target="_blank"><img class="icon" src="/data/linkedin-icon.svg" alt="LinkedIn" style="width: 50px; height: 50px;"/></a>
-        <a href="https://github.com/anonymus-code" target="_blank"><img class="icon" src="/data/github-icon.svg" alt="GitHub" style="width: 50px; height: 50px;"/></a>
-      </div>
-      <div class="profile-card">
-        <img src="/data/team/Shreya.jpeg" alt="Profile 4" />
-        <h2>Shreya H Rao</h2>
-        <p>Depressed but never defeated, always pushing forward.</p>
-        <a href="https://www.linkedin.com/in/shreya-rao-27b3a32a8" target="_blank"><img class="icon" src="/data/linkedin-icon.svg" alt="LinkedIn" style="width: 50px; height: 50px;"/></a>
-        <a href="https://github.com/riball" target="_blank"><img class="icon" src="/data/github-icon.svg" alt="GitHub" style="width: 50px; height: 50px;"/></a>
-      </div>
-      <div class="profile-card">
-        <img src="/data/team/Sarayu.jpg" alt="Profile 5" />
-        <h2>Sarayu Kondasani</h2>
-        <p>Quiet genius who’s got creativity on full blast.</p>
-        <a href="https://www.linkedin.com/in/sarayu-kondasani-3b8495297" target="_blank"><img class="icon" src="/data/linkedin-icon.svg" alt="LinkedIn" style="width: 50px; height: 50px;"/></a>
-        <a href="https://github.com/sarayu231" target="_blank"><img class="icon" src="/data/github-icon.svg" alt="GitHub" style="width: 50px; height: 50px;"/></a>
-      </div>
-      <div class="profile-card">
-        <img src="/data/team/AbiPrrii.jpg" alt="Profile 6" />
-        <h2>Yisol Choi</h2>
-        <p>The diligent one who brings laughter and life to the team.</p>
-        <a href="https://www.linkedin.com/in/yisol-choi-5a6270331" target="_blank"><img class="icon" src="/data/linkedin-icon.svg" alt="LinkedIn" style="width: 50px; height: 50px;"/></a>
-        <a href="https://github.com/Abigail-choi04" target="_blank"><img class="icon" src="/data/github-icon.svg" alt="GitHub" style="width: 50px; height: 50px;"/></a>
-      </div>
-    </div>
-    <button class="carousel-control next">▶️</button>
-  </div>  
-</section>
+    <!-- Team Section -->
+    <section id="team" class="section team-section">
+        <div class="geometric-bg"></div>
+        <div class="container">
+            <h2 class="section-title">Team Cosmolux</h2>
+            <div class="team-carousel">
+                <div class="team-track">
+                    <div class="team-member active">
+                        <div class="member-avatar">
+                            <img src="/data/team/Jey.jpg" alt="Jeyadheep V" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                            <div class="avatar-fallback">JV</div>
+                        </div>
+                        <h4 class="member-name">Jeyadheep V</h4>
+                        <p class="member-description">Depressed? Maybe. Techy? Absolutely. Sleep? What's that?</p>
+                        <div class="member-links">
+                            <a href="https://www.linkedin.com/in/jeyv/" target="_blank" class="member-link" aria-label="LinkedIn Profile">
+                                <img src="data/linkedin-icon.svg" alt="LinkedIn" />
+                            </a>
+                            <a href="https://github.com/BackBenchDreamer" target="_blank" class="member-link" aria-label="GitHub Profile">
+                                <img src="data/github-icon.svg" alt="GitHub" />
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="team-member">
+                        <div class="member-avatar">
+                            <img src="/data/team/Ajay.jpeg" alt="V Ajay" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                            <div class="avatar-fallback">VA</div>
+                        </div>
+                        <h4 class="member-name">V Ajay</h4>
+                        <p class="member-description">A smooth coder by day, relationship-seeker by night.</p>
+                        <div class="member-links">
+                            <a href="http://www.linkedin.com/in/vajayc" target="_blank" class="member-link" aria-label="LinkedIn Profile">
+                                <img src="data/linkedin-icon.svg" alt="LinkedIn" />
+                            </a>
+                            <a href="https://github.com/ajayvofficial0" target="_blank" class="member-link" aria-label="GitHub Profile">
+                                <img src="data/github-icon.svg" alt="GitHub" />
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="team-member">
+                        <div class="member-avatar">
+                            <img src="/data/team/Chet.jpeg" alt="R Chetanaananda" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                            <div class="avatar-fallback">RC</div>
+                        </div>
+                        <h4 class="member-name">R Chetanaananda</h4>
+                        <p class="member-description">Letting life flow as smoothly as their code.</p>
+                        <div class="member-links">
+                            <a href="http://www.linkedin.com/in/chetanaananda-r-91a7782a7" target="_blank" class="member-link" aria-label="LinkedIn Profile">
+                                <img src="data/linkedin-icon.svg" alt="LinkedIn" />
+                            </a>
+                            <a href="https://github.com/anonymus-code" target="_blank" class="member-link" aria-label="GitHub Profile">
+                                <img src="data/github-icon.svg" alt="GitHub" />
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="team-member">
+                        <div class="member-avatar">
+                            <img src="/data/team/Shreya.jpeg" alt="Shreya H Rao" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                            <div class="avatar-fallback">SH</div>
+                        </div>
+                        <h4 class="member-name">Shreya H Rao</h4>
+                        <p class="member-description">Depressed but never defeated, always pushing forward.</p>
+                        <div class="member-links">
+                            <a href="https://www.linkedin.com/in/shreya-rao-27b3a32a8" target="_blank" class="member-link" aria-label="LinkedIn Profile">
+                                <img src="data/linkedin-icon.svg" alt="LinkedIn" />
+                            </a>
+                            <a href="https://github.com/riball" target="_blank" class="member-link" aria-label="GitHub Profile">
+                                <img src="data/github-icon.svg" alt="GitHub" />
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="team-member">
+                        <div class="member-avatar">
+                            <img src="/data/team/Sarayu.jpg" alt="Sarayu Kondasani" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                            <div class="avatar-fallback">SK</div>
+                        </div>
+                        <h4 class="member-name">Sarayu Kondasani</h4>
+                        <p class="member-description">Quiet genius who's got creativity on full blast.</p>
+                        <div class="member-links">
+                            <a href="https://www.linkedin.com/in/sarayu-kondasani-3b8495297" target="_blank" class="member-link" aria-label="LinkedIn Profile">
+                                <img src="data/linkedin-icon.svg" alt="LinkedIn" />
+                            </a>
+                            <a href="https://github.com/sarayu231" target="_blank" class="member-link" aria-label="GitHub Profile">
+                                <img src="data/github-icon.svg" alt="GitHub" />
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="team-member">
+                        <div class="member-avatar">
+                            <img src="/data/team/AbiPrrii.jpg" alt="Yisol Choi" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                            <div class="avatar-fallback">YC</div>
+                        </div>
+                        <h4 class="member-name">Yisol Choi</h4>
+                        <p class="member-description">The diligent one who brings laughter and life to the team.</p>
+                        <div class="member-links">
+                            <a href="https://www.linkedin.com/in/yisol-choi-5a6270331" target="_blank" class="member-link" aria-label="LinkedIn Profile">
+                                <img src="data/linkedin-icon.svg" alt="LinkedIn" />
+                            </a>
+                            <a href="https://github.com/Abigail-choi04" target="_blank" class="member-link" aria-label="GitHub Profile">
+                                <img src="data/github-icon.svg" alt="GitHub" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-controls">
+                    <button class="carousel-btn prev-btn">‹</button>
+                    <div class="carousel-dots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                    <button class="carousel-btn next-btn">›</button>
+                </div>
+            </div>
+        </div>
+    </section>
 
-
-    <!-- Footer -->
-    <footer style="background-color: #222; color: #fff; padding: 20px; text-align: center;">
-      <div style="max-width: 1200px; margin: 0 auto;">
-        <h3 style="color: #ffcc00;">Cosmolux</h3>
-        <p>Exploring the wonders of space, one galaxy at a time.</p>
-
-        <p style="margin-top: 20px;">&copy; 2024 Cosmolux. All rights reserved.</p>
-      </div>
-    </footer>
-  </body>
+    <script src="app.js"></script>
+</body>
 </html>
